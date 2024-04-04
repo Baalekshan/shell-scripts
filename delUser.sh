@@ -44,6 +44,7 @@ unset exit_line1
 unset exit_line2
 
 } 
+
 echo "Automated Deletion of accounts "
 echo
 line1="Please enter the username of the user "
@@ -56,7 +57,6 @@ get_answer
 exit_line1="Because the account, $user_account, is not "
 exit_line1="the one you wish to delete, we are leaving the script..."
 process_answer
-
 
 user_account_record=$(cat /etc/passwd | grep -w $user_account)
 
@@ -76,15 +76,9 @@ echo
 
 line1="Is this the correct User Account? [y/n]"
 get_answer
-
-
-
-
-
 exit_line1="Because the account, $user_account, is not "
 exit_line2="the one you wish to delete, we are leaving the script..."
 process_answer
-
 
 echo
 echo "Step #2 - Find process on system belonging to user account"
@@ -126,6 +120,7 @@ case $? in
      esac
 ;;
 esac
+
 echo
 echo "Step #3 - Find files on system belonging to user account"
 echo
